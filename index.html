@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Private Redirector</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/url-search-params/0.8.0/url-search-params.js"></script>
+    <script>
+        var TARGET_KEY = 'key';
+        var resolve_info = {
+            "my-blog": "http://www.notforme.kr"
+        }
+        var urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.has(TARGET_KEY)) {
+            var key = urlParams.get(TARGET_KEY);
+            window.location.href = resolve_info[key];
+        } else {
+            // TODO if not matched, provide 404 page
+        }
+    </script>
+</body>
+
+</html>
